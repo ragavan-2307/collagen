@@ -1,0 +1,21 @@
+{
+  "name": "collagen-age-analyzer",
+  "version": "1.0.0",
+  "description": "Understanding Collagen Changes in Aging Skin - Educational Web Application",
+  "private": true,
+  "main": "backend/src/server.js",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "dev": "node backend/src/server.js",
+    "test": "node --test backend/tests/*.test.js",
+    "render:build": "cd backend && npm install && npx prisma generate"
+  },
+  "keywords": [
+    "collagen",
+    "skincare-science",
+    "educational-assessment",
+    "skin-aging"
+  ],
+  "author": "Collagen Age Analyzer Team",
+  "license": "ISC"
+}

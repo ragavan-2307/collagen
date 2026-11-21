@@ -1,0 +1,26 @@
+# Render Blueprint Specification for Collagen Age Analyzer
+# Includes Express Web Service and Managed PostgreSQL Database
+
+services:
+  - type: web
+    name: collagen-age-analyzer
+    runtime: node
+    plan: free
+    buildCommand: npm run render:build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: collagen-db
+          property: connectionString
+
+databases:
+  - name: collagen-db
+    plan: free
+    databaseName: collagen_db
+    user: collagen_user
